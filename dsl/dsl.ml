@@ -186,7 +186,3 @@ let rules =
           [ sequent e1 ([ t1 ], [ t2 ]); sequent e2 ([ t1 ], [ t2 ]) ]
           (sequent (if_ [ e1 ] [ e2 ]) ([ t1 ], [ t2 ])) );
     ]
-
-let _ =
-  print_endline (latex_rules rules);
-  print_endline (text_rules rules)

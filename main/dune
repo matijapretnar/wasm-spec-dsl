@@ -1,0 +1,6 @@
+(executable
+ (name main)
+ (libraries dsl)
+ (promote
+  (until-clean)
+  (into ..)))

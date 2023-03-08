@@ -18,6 +18,10 @@ The Wasm specification is light years ahead of specifications for [other](https:
 
 The problem is becoming more and annoying with the growth of the specification.
 
+## How to use
+
+The easiest way to test the project is using [dune](https://dune.build). Once installed, you can rune `make`, which will result in a `main.exe` executable. Running it will produce a human-readable output of the currently implemented specification.
+
 ## Explanation of design choices
 
 ### Why not use an existing tool like [Ott](https://github.com/ott-lang/ott)?
