@@ -10,6 +10,8 @@ and numtype' = I32
 let i32 = Concrete I32
 let latex_numtype = meta_latex @@ function I32 -> "i32"
 
+let grammar_numtype = [i32]
+
 (* VALTYPE *)
 
 type valtype = valtype' meta
@@ -17,6 +19,7 @@ and valtype' = NumType of numtype
 
 let numtype t = Concrete (NumType t)
 let latex_valtype = meta_latex @@ function NumType nt -> latex_numtype nt
+let grammar_numtype = [numtype (Meta "v")]
 
 (* NUMINSTR *)
 
@@ -40,6 +43,8 @@ let latex_irelop =
   | Ne -> "ne"
   | Lt sx -> Printf.sprintf "%slt" (latex_sx sx)
 
+let grammar_irelop = [Concrete Eq; Concrete Ne; Concrete (Lt (Meta "sx"))]
+
 type i32 = int meta
 
 let latex_i32 = meta_latex @@ string_of_int
@@ -52,6 +57,8 @@ let latex_num_instr =
   | IConst n -> Printf.sprintf "i32.const %s" (latex_i32 n)
   | IBinop op -> Printf.sprintf "i32.%s" (latex_ibinop op)
   | IRelop op -> Printf.sprintf "i32.%s" (latex_irelop op)
+
+let grammar_num_instr = [Concrete (IConst (Meta "n")); Concrete (IBinop (Meta "op")); Concrete (IRelop (Meta "rel"))]
 
 (* CONTROLINSTR & INSTR *)
 
