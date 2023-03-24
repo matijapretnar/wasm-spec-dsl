@@ -1,5 +1,7 @@
 # WebAssembly specification DSL
 
+**Archived in favour of <https://github.com/Wasm-DSL/spectec>.**
+
 This project provides a domain-specific language (DSL) for describing [WebAssembly](https://webassembly.org) (or Wasm) [specification](https://webassembly.github.io/spec/core/). This can then be used as the single canonical representation, from which one can automatically derive:
 
 - human-readable specification,
